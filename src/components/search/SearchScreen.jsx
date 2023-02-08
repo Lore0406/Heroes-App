@@ -80,7 +80,7 @@ export const SearchScreen = () => {
                ( query !== '' && filterHeroes.length === 0) 
                &&
                <div className="alert alert-danger">
-                  Your search <b>{ query }</b> didn't match any hero
+                  Your search <b>{ query }</b> didn't match any superhero
                </div>
             }
 

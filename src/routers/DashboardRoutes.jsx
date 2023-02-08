@@ -7,6 +7,9 @@ import { SearchScreen } from '../components/search/SearchScreen'
 import { Navbar } from '../components/ui/NavBar'
 
 export const DashboardRoutes = () => {
+
+  
+
   return (
     <>
       <Navbar />
@@ -18,7 +21,7 @@ export const DashboardRoutes = () => {
             <Route exact='true' path="/search" element={ <SearchScreen /> } />
             <Route index element = { <MarvelScreen />} />
             {/* Ruta por defecto */}
-            <Route path="*" element={<Navigate to="/marvel" />} />
+            <Route path="*" element={<Navigate to="/marvel" />} />         
          </Routes>
       </div>
     </>

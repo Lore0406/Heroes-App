@@ -1,12 +1,29 @@
 import { useNavigate } from 'react-router-dom'
+import { useContext } from "react"
+import { AuthContext } from "../../auth/AuthContext"
+import { types } from "../../types/types"
 
 export const LoginScreen = () => {
 
-  let navigate = useNavigate();
+  let navigate = useNavigate()
+
+  const { dispatch } = useContext( AuthContext )
+
+  const pathToGo = localStorage.getItem("lastPathname") || "/"
 
   const handleClickLogin = () => {
-    navigate("/")
-    // navigate("/", {replace: true})
+    
+    dispatch(
+      // definimos action dentro de dispatch
+      { 
+        type: types.login,
+        payload: {
+          name: 'Osito'
+        } 
+      }
+    )
+    // definimos el path al hacer clic en login 
+    navigate(pathToGo, {replace: true})
   }
 
 
@@ -22,7 +39,6 @@ export const LoginScreen = () => {
         Login
       </button>
 
-      {/* <Navigate /> */}
     </div>
   )
 }
